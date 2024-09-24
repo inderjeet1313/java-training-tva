@@ -1,7 +1,6 @@
 package com.example.tva.services;
 
 import com.example.tva.dao.IEventDAO;
-import com.example.tva.dao.ITimelineDAO;
 import com.example.tva.domain.constants.EventTypeEnum;
 import com.example.tva.domain.models.Event;
 import com.example.tva.domain.requests.CreateEventRequest;
@@ -28,7 +27,7 @@ public class EventServiceImpl implements IEventService {
         event.setEventName(createEventRequest.getEventName());
         event.setEventDescription(createEventRequest.getEventDescription());
         event.setTimestamp(Timestamp.valueOf(createEventRequest.getTimestamp()));
-        event.setEventType(EventTypeEnum.valueOf(createEventRequest.getEventType()));
+        event.setEventType(EventTypeEnum.value(createEventRequest.getEventType()));
 
         eventDAO.save(event);
 
