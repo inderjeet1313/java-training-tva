@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: ''
+        distribution: '17'
 
     - name: Cache Maven packages
       uses: actions/cache@v2
